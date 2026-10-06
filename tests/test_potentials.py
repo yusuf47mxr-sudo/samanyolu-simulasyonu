@@ -1,4 +1,4 @@
-"""Aşama 0 kabul testleri: T1, T2, T6, T7, T8a, T8b (CLAUDE.md §4)."""
+"""Aşama 0 kabul testleri: T1, T2, T6, T7, T8a, T8b (PROJE_TANIMI.md §4)."""
 
 from dataclasses import replace
 

@@ -3,7 +3,7 @@
 # Not: "/runs/" yazılsaydı aşağıdaki istisnalar çalışmazdı; git, dışlanmış bir klasörün
 # içindeki dosyayı geri alamaz. Bu yüzden "/runs/*" ve alt klasörler için aynı kalıp.
 /runs/*
-!/runs/OZET.md
+!/runs/SONUCLAR.md
 !/runs/a2_karsilastirma.png
 !/runs/cubuk_faz_profilleri.png
 !/runs/cubuk_zayiflama_testi.png
@@ -21,3 +21,6 @@ __pycache__/
 
 # Uygulama açılışta plotly paketinden kopyalar (4.8 MB)
 ui/galaxy3d/plotly.min.js
+
+# Yerel geliştirme aracı talimatı (yalnızca PROJE_TANIMI.md'ye yönlendirir); depoya girmez
+/CLAUDE.md

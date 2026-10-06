@@ -8,7 +8,7 @@ Birimler: konum : kpc, hız : kpc/Myr, zaman : Myr, kütle : M_sun,
 Sigma : M_sun/kpc^2, enerji : M_sun kpc^2/Myr^2.
 
 Not: config.py bu aşamada değiştirilmediği için analiz ayarları aşağıda
-modül sabitleri olarak durur (CLAUDE.md §8'e göre ileride config.py'ye taşınmalı).
+modül sabitleri olarak durur (PROJE_TANIMI.md §8'e göre ileride config.py'ye taşınmalı).
 """
 
 import json

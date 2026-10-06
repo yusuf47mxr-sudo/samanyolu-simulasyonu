@@ -1,4 +1,4 @@
-"""Aşama 1 kabul testi: T5 (CLAUDE.md §4)."""
+"""Aşama 1 kabul testi: T5 (PROJE_TANIMI.md §4)."""
 
 import numpy as np
 

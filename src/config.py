@@ -1,6 +1,6 @@
 """Tüm varsayılan parametreler — tek yer.
 
-Fiziksel ve sayısal parametreler ayrı dataclass'larda durur (CLAUDE.md §8).
+Fiziksel ve sayısal parametreler ayrı dataclass'larda durur (PROJE_TANIMI.md §8).
 Her alanın `metadata` içinde birimi ve izinli aralığı vardır; arayüz
 kaydıraklarını bu aralıklardan kurar.
 

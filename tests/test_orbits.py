@@ -1,4 +1,4 @@
-"""Aşama 1 kabul testleri: T3, T4 (CLAUDE.md §4)."""
+"""Aşama 1 kabul testleri: T3, T4 (PROJE_TANIMI.md §4)."""
 
 import numpy as np
 import pytest
