@@ -1,0 +1,23 @@
+# Simülasyon çıktıları (~930 MB) depoya girmez — yalnızca kökteki /runs/.
+# Başındaki "/" sayesinde başka klasörlerdeki runs/ (ör. deploy/runs/) etkilenmez.
+# Not: "/runs/" yazılsaydı aşağıdaki istisnalar çalışmazdı; git, dışlanmış bir klasörün
+# içindeki dosyayı geri alamaz. Bu yüzden "/runs/*" ve alt klasörler için aynı kalıp.
+/runs/*
+!/runs/OZET.md
+!/runs/a2_karsilastirma.png
+!/runs/cubuk_faz_profilleri.png
+!/runs/cubuk_zayiflama_testi.png
+!/runs/ana/
+/runs/ana/*
+!/runs/ana/animasyon.mp4
+!/runs/hafif_hale/
+/runs/hafif_hale/*
+!/runs/hafif_hale/animasyon.mp4
+
+# Python ortamı ve önbellekler (numba önbelleği __pycache__ içinde)
+.venv/
+__pycache__/
+.pytest_cache/
+
+# Uygulama açılışta plotly paketinden kopyalar (4.8 MB)
+ui/galaxy3d/plotly.min.js

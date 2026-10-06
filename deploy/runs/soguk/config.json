@@ -1,0 +1,57 @@
+{
+  "name": "soguk",
+  "galaxy": {
+    "disk": {
+      "M_d": 68000000000.0,
+      "a": 3.0,
+      "b": 0.28
+    },
+    "bulge": {
+      "M_b": 5000000000.0,
+      "c": 0.5
+    },
+    "halo": {
+      "M_vir": 1000000000000.0,
+      "r_s": 16.0,
+      "conc": 15.0,
+      "enabled": true
+    },
+    "bh": {
+      "M_bh": 4300000.0
+    }
+  },
+  "disk_ic": {
+    "M_d": 48248600000.0,
+    "Q_target": 0.8,
+    "R_d": 2.6,
+    "R_cut": 15.0,
+    "z_0": 0.3,
+    "t_end": 2000.0
+  },
+  "numerical": {
+    "N": 40000,
+    "eps": 0.08,
+    "dt": 0.2,
+    "theta": 0.6,
+    "seed": 42,
+    "snap_interval": 80.0,
+    "energy_interval": 5.0,
+    "leaf_size": 8,
+    "tree_quadrupole": true,
+    "n_profile_grid": 2000,
+    "ic_ring_n": 120,
+    "ic_ring_nphi": 64,
+    "ic_vc_smooth": 0.5
+  },
+  "t_end": 2000.0,
+  "self_gravity": "tree",
+  "A2_R_MAX": 5.0,
+  "eln": 0.8132830298697192,
+  "deploy": {
+    "source_N": 40000,
+    "N": 5000,
+    "snap_every": 8,
+    "seed": 0,
+    "note": "Seyreltilmiş görüntüleme verisi; A2/A0 ve enerji zaman serileri tam çözünürlükten."
+  }
+}

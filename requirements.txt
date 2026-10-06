@@ -1,0 +1,9 @@
+# Python 3.12 ile denendi. Sürümler sabit: 3B görünümün kamera korunması
+# Streamlit 1.65'in bileşen davranışına göre yazıldı (bkz. app.py, ui/galaxy3d/).
+numpy==2.5.3
+scipy==1.18.1
+matplotlib==3.11.2
+numba==0.68.0
+streamlit==1.65.0
+plotly==7.1.0
+pytest==9.1.1

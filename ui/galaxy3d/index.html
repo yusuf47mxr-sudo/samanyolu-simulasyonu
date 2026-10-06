@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- Galaksi 3B görünümü: Streamlit v1 bileşeni. Aynı key ile monte kalır; her yeni veride
+     aynı div üzerinde Plotly.react çağrılır, böylece layout.uirevision kullanıcının kamera
+     açısını korur. plotly.min.js, app.py tarafından plotly paketinden bu klasöre kopyalanır. -->
+<style>
+  html, body { margin: 0; padding: 0; background: #0b0d14; overflow: hidden; }
+  #g { width: 100%; }
+</style>
+<script src="plotly.min.js"></script>
+</head>
+<body>
+<div id="g"></div>
+<script>
+  function send(type, data) {
+    window.parent.postMessage(Object.assign({ isStreamlitMessage: true, type: type }, data || {}), "*");
+  }
+  function f32(b64) {
+    const bin = atob(b64);
+    const buf = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) buf[i] = bin.charCodeAt(i);
+    return new Float32Array(buf.buffer);
+  }
+  const el = document.getElementById("g");
+  window.addEventListener("message", function (ev) {
+    const msg = ev.data;
+    if (!msg || msg.type !== "streamlit:render") return;
+    const a = msg.args;
+    const data = a.figure.data;
+    data[0].x = f32(a.x);
+    data[0].y = f32(a.y);
+    data[0].z = f32(a.z);
+    data[0].marker.color = f32(a.c);
+    el.style.height = a.height + "px";
+    // Ek güvence: plotly kamerayı yalnızca fare 3B kanvasın üzerinde bırakılınca layout'a kaydeder
+    // (renk çubuğunun ya da grafiğin dışında bırakılırsa kaydetmez). Bu yüzden WebGL sahnesinin o anki
+    // kamerası yeni layout'a taşınır; uirevision yine sabit kalır.
+    const sc = el._fullLayout && el._fullLayout.scene && el._fullLayout.scene._scene;
+    if (sc && sc.getCamera) a.figure.layout.scene.camera = sc.getCamera();
+    Plotly.react(el, data, a.figure.layout, { displaylogo: false, responsive: true })
+      .then(function () { send("streamlit:setFrameHeight", { height: a.height }); });
+  });
+  send("streamlit:componentReady", { apiVersion: 1 });
+</script>
+</body>
+</html>
